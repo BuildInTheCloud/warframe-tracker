@@ -1,0 +1,187 @@
+page-home {
+    .home-page {
+        background-image: url("../assets/img/galaxy.jpg") !important;
+        @media screen and (min-width: 768px) {
+            font-size: 18px;
+        }
+
+        ion-slides{
+
+            ion-slide{
+                color: #fff;
+                display:block !important;
+                padding-top: 5px;
+
+                .section-header{
+                    border-bottom: 1px solid #fff;
+                    width: 100%;
+                    text-align: left !important;
+
+                    .section-title{
+                        text-transform: uppercase !important;
+                    }
+                }
+
+                .section-content{
+                    padding:20px 5px;
+                    max-width: 1000px !important;
+                    
+                    .section-item{
+                        background-color: transparent;
+                        border: 1px solid #565656;
+                        width:100%;
+                        border-radius:1px;
+                        padding-top: 5px;
+                        font-size: 11px;
+
+                        @media screen and (min-width: 768px) {
+                            font-size: 18px;
+                        }
+
+                        .syndicate-flag{
+                            height: auto;
+                            width:100px;
+                            background-size: cover;
+                            border-radius:1px;
+                            border: 1px solid #3e3e3e;
+                            position:absolute;
+                            max-width:100px;
+                            margin-top: -8px;
+                            -webkit-box-shadow: 0px 1px 2px 0px #131313; 
+                            -moz-box-shadow:    0px 1px 2px 0px #131313;
+                            box-shadow: 0px 1px 2px 0px #131313;
+                        }
+
+                        ion-grid{
+                            padding: 0px !important;
+
+                            ion-row{
+                                padding: 0px !important;
+
+                                ion-col{
+                                    padding: 0px !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-content: center;
+                                    align-items: center;
+
+                                    .card-img{
+                                        height: auto;
+                                        background-size: cover;
+                                        border-radius:1px;
+                                        border: 1px solid #252525;
+                                    }
+
+                                    .alert-img{
+                                        max-width:115px;
+                                    }
+
+                                    .relic{
+                                        max-width:90px;
+                                    }
+
+                                    .no-border{
+                                        border:none;
+                                    }
+
+                                    .invasion-container{
+                                        padding:5px 10px;
+                                        height:100%;
+                                        width:100%;
+                                        min-height: 60px;
+
+                                        .invasion-meter{
+                                            height:7px;
+                                            width:100%;
+
+                                            .invasion-label{
+                                                font-weight:600;
+                                                color: #fff;
+                                                text-align:left;
+                                                margin-bottom: 5px;
+                                            }
+
+                                            .faction-a{
+                                                float: left;
+                                                display:inline;
+                                                height:100%;
+                                            }
+
+                                            .faction-b{
+                                                float: right;
+                                                display:inline;
+                                                height:100%;
+                                            }
+                                        }
+
+                                        .faction-labels{
+                                            width:100%;
+
+                                            .faction-label-a{
+                                                float: left;
+                                                display:inline;
+                                                height:100%;
+                                                text-align:left;
+                                            }
+
+                                            .faction-label-b{
+                                                float: right;
+                                                display:inline;
+                                                height:100%;
+                                                text-align:right;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .card-details{
+                                    display:block !important;
+                                    text-align: left !important;
+                                    padding: 5px 10px !important;
+
+                                    .card-line{
+                                        margin-bottom: 3px;
+
+                                        .mission-lvl{
+                                            color: #cdcdcd;
+                                        }
+                                    }
+
+                                    .reward-list{
+                                        display: flex !important;
+                                        flex-direction: row !important;
+                                        justify-content: flex-start !important;
+
+                                        .inline-item{
+                                            display: inline !important;
+                                            margin-right: 5px;
+
+                                            .img-inline{
+                                                height: auto;
+                                                max-width: 26px !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .card-footer{
+                                height: 20px;
+                                border-top: 1px solid #565656;
+
+                                @media screen and (min-width: 768px) {
+                                    height: 30px;
+                                }
+
+                                .time-count{
+                                    color: #cdcdcd;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
