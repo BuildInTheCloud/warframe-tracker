@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class Warframe {
@@ -12,10 +13,10 @@ export class Warframe {
       pc: 'warframe/api/pc'
   };
 
-  constructor(public http: Http) {
+  constructor(public http: Http, public storage: Storage) {
   }
 
-  getData(type) {
+  public getData(type) {
     var url: string = this.feeds[type];
 
     if (this.data) {
@@ -28,5 +29,14 @@ export class Warframe {
         resolve(this.data);
       });
     });
+  }
+
+  public getPlatform(){
+    let platform = this.storage.get('Warframe_Platform');
+    return platform || 'pc';
+  }
+
+  public setPlatform(platform){
+    this.storage.set('Warframe_Platform', platform);
   }
 }

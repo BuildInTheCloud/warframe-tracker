@@ -6,8 +6,12 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+//ionic services
+import { Storage } from '@ionic/storage';
+
 //--services
 import { Warframe } from '../providers/warframe';
+import { WarframeMapping } from '../providers/mapping';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,21 @@ import { Warframe } from '../providers/warframe';
     TabsPage
   ],
   providers: [
-    Warframe
+    /*{
+      provide: Warframe,
+      useFactory: () => { return new Warframe(); },
+      deps: [],
+      multi:true
+    },
+    {
+      provide: WarframeMapping,
+      useFactory: () => { return new WarframeMapping(); },
+      deps:[],
+      multi:true
+    },*/
+    Warframe,
+    WarframeMapping,
+    Storage 
   ]
 })
 export class AppModule {}
