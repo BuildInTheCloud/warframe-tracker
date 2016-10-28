@@ -9,7 +9,7 @@ import { WarframeMapping } from '../../providers/mapping';
 })
 export class HomePage {
   feed_data: any = {
-    alerts:{}
+    alerts: []
   };
   warframe_mapping: any;
 
@@ -18,35 +18,41 @@ export class HomePage {
   }
 
   /* Load Warframe data */
-  loadData(){
+  loadData() {
     this.mapping_service.getMapping(false)
-    .then(data => {
-      //alert(data);
-      this.warframe_mapping = data || [];
-      console.log(this.warframe_mapping);
-      return Promise.resolve();
-    })
-    .then(data => {
-      this.warframe_service.getData('pc').then(data => {
-        console.log(data);
-
-        //prepare data
-        this.feed_data.alerts = data.Alerts || [];
-        this.mapAlerts(this.feed_data.alerts);
+      .then(data => {
+        //alert(data);
+        this.warframe_mapping = data || [];
+        console.log(this.warframe_mapping);
+        return Promise.resolve();
       })
-    });
+      .then(data => {
+        this.warframe_service.getData('pc').then(data => {
+          console.log(data);
+
+          //prepare data
+          this.mapAlerts(data.Alerts || []);
+        })
+      });
   }
 
   /* Prepare warframe alerts */
-  mapAlerts(warframe_alerts){
+  mapAlerts(warframe_alerts) {
     warframe_alerts.forEach((item) => {
       let missionInfo = item.MissionInfo || {};
       let expiry = item.Expiry || {};
 
-      let alert_item =  {
-        node: this.warframe_mapping.nodes[missionInfo.location],
+      let node_item = this.warframe_mapping.nodes[missionInfo.location];
+      let node_split = node_item ? node_item.split('|') : [];
+
+      let alert_item = {
+        node: (node_split[1] || 'N/A'),
+        planet: (node_split[0] || 'N/A'),
+        mission: this.warframe_mapping.mission_mappings[missionInfo.missionType],
         faction: this.warframe_mapping.factions[missionInfo.faction],
         expiration: expiry.sec,
+        minEnemyLevel: missionInfo.minEnemyLevel,
+        maxEnemyLevel: missionInfo.maxEnemyLevel,
         rewards: {
           credits: missionInfo.missionReward && missionInfo.missionReward.credits ? missionInfo.missionReward.credits : 0,
           items: []
@@ -54,18 +60,18 @@ export class HomePage {
       };
 
       //items
-      if(missionInfo.missionReward.items && missionInfo.missionReward.items.length > 0){
+      if (missionInfo.missionReward.items && missionInfo.missionReward.items.length > 0) {
         missionInfo.missionReward.items.forEach((reward_item) => {
           //add the item to our reward item array
           let item_type = reward_item.ItemType || reward_item;
           alert_item.rewards.items.push({
-            item:item_type.substring((item_type.lastIndexOf('/') + 1))
+            item: item_type.substring((item_type.lastIndexOf('/') + 1))
           });
         })
       }
 
       //countedItems
-      if(missionInfo.missionReward.countedItems && missionInfo.missionReward.countedItems.length > 0){
+      if (missionInfo.missionReward.countedItems && missionInfo.missionReward.countedItems.length > 0) {
         missionInfo.missionReward.countedItems.forEach((counted_item) => {
           //add the counted item to our reward items array
           alert_item.rewards.items.push({
@@ -75,20 +81,20 @@ export class HomePage {
         })
       }
 
-      //planet | stage | mission 
-
+      //add alert to list
+      this.feed_data.alerts.push(alert_item);
     });
   }
 
-  mapInvasions(invasions){
-  }
-  
-  mapSyndicates(syndicates){
+  mapInvasions(invasions) {
   }
 
-  mapVoidFissures(fissures){
+  mapSyndicates(syndicates) {
   }
 
-  mapSorties(sorties){
+  mapVoidFissures(fissures) {
+  }
+
+  mapSorties(sorties) {
   }
 }
