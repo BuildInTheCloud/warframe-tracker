@@ -48,7 +48,7 @@ export class HomePage {
       let alert_item = {
         node: (node_split[1] || 'N/A'),
         planet: (node_split[0] || 'N/A'),
-        mission: this.warframe_mapping.mission_mappings[missionInfo.missionType],
+        mission: this.warframe_mapping.missions[missionInfo.missionType],
         faction: this.warframe_mapping.factions[missionInfo.faction],
         expiration: expiry.sec,
         minEnemyLevel: missionInfo.minEnemyLevel,
@@ -59,7 +59,7 @@ export class HomePage {
         }
       };
 
-      //items
+      //if - items
       if (missionInfo.missionReward.items && missionInfo.missionReward.items.length > 0) {
         missionInfo.missionReward.items.forEach((reward_item) => {
           //add the item to our reward item array
@@ -70,7 +70,7 @@ export class HomePage {
         })
       }
 
-      //countedItems
+      //if - countedItems
       if (missionInfo.missionReward.countedItems && missionInfo.missionReward.countedItems.length > 0) {
         missionInfo.missionReward.countedItems.forEach((counted_item) => {
           //add the counted item to our reward items array

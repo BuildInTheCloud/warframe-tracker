@@ -327,7 +327,7 @@
     "0" : "MT_RESCUE",
     "1" : "MT_EXTERMINATE",
     "4" : "MT_SPY",
-    "6" : "MT_MOBILEDEFENSE",
+    "6" : "MT_MOBILE_DEFENSE",
     "9" : "MT_ASSASSINATION"
   },
   "factions":{
@@ -343,7 +343,11 @@
     "MT_SPY" : "Spy",
     "MT_RESCUE" : "Rescue",
     "MT_DEFENSE" :"Defense",
-    "MT_MOBILE_DEFENSE" : "Mobile Defense"
+    "MT_MOBILE_DEFENSE" : "Mobile Defense",
+    "MT_EXCAVATE" : "Excavation",
+    "MT_EXCAVATION" : "Excavation",
+    "MT_SABOTAGE" : "Sabotage",
+    "MT_SURVIVAL" : "Survival"
   },
   "region_index" : {
     "1" : "mercury",
@@ -367,8 +371,95 @@
     "RedVeilSyndicate" : "../assets/img/red_veil.png",
     "SteelMeridianSyndicate" : "../assets/img/steel-meridian.png"
   },
-  "components_images":{
+  "rewards_images":{
     "AlloyPlate" : "../assets/img/components/AlloyPlate.png",
-    "ArgonCrystal" : ""
+    "ArgonCrystal" : "",
+
+    "StatlessV1AshAltHelmetBlueprint" : "../assets/img/helmets/Ash_Scorpion_Helmet.png",
+    "StatlessV2AshAltHelmetBlueprint" : "../assets/img/helmets/Ash_Locust_Helmet.png",
+
+    "StatlessV1AtlasAltHelmetBlueprint" : "../assets/img/helmets/Atlas_Tartarus_Helmet.png",
+    "StatlessV2AtlasAltHelmetBlueprint" : "../assets/img/helmets/Atlas_Shikoro_Helmet.png",
+
+    "StatlessV1BansheeAltHelmetBlueprint" : "../assets/img/helmets/ReverbBansheeHelmet.png",
+    "StatlessV2BansheeAltHelmetBlueprint" : "../assets/img/helmets/ChorusBansheeHelmet.png",
+
+    "StatlessV1ChromaAltHelmetBlueprint" : "../assets/img/helmets/Chroma_Drac_Helmet.png",
+    "StatlessV2ChromaAltHelmetBlueprint" : "../assets/img/helmets/Chroma_Amaru_Helmet.png",
+
+    "StatlessV1EmberAltHelmetBlueprint" : "../assets/img/helmets/Ember_Phoenix_Helmet.png",
+    "StatlessV2EmberAltHelmetBlueprint" : "../assets/img/helmets/Ember_Backdraft_Helmet.png",
+
+    "StatlessV1EquinoxAltHelmetBlueprint" : "../assets/img/helmets/Equinox_Solstice_Helmet.png",
+    
+    "StatlessV1ExcaliburAltHelmetBlueprint" : "../assets/img/helmets/Excalibur_Avalon_Helmet.png",
+    "StatlessV2ExcaliburAltHelmetBlueprint" : "../assets/img/helmets/Excalibur_Pendragon_Helmet.png",
+    "StatlessV3ExcaliburAltHelmetBlueprint" : "../assets/img/helmets/Excalibur_Mordred_Helmet.png",
+
+    "StatlessV1FrostAltHelmetBlueprint" : "../assets/img/helmets/Frost_Helmet_Aurora.png",
+    "StatlessV2FrostAltHelmetBlueprint" : "../assets/img/helmets/Frost_Squall_Helmet.png",
+
+    "StatlessV1HydroidAltHelmetBlueprint" : "../assets/img/helmets/Hydroid_Triton_Helmet.png",
+    "StatlessV2HydroidAltHelmetBlueprint" : "../assets/img/helmets/Hydroid_Ketos_Helmet.png",
+
+    "StatlessV1InarosAltHelmetBlueprint" : "../assets/img/helmets/Inaros_Anubis_Helmet.png",
+
+    "StatlessV1IvaraAltHelmetBlueprint" : "../assets/img/helmets/Ivara_Loxley_Helmet.png",
+
+    "StatlessV1LimboAltHelmetBlueprint" : "../assets/img/helmets/Limbo_Aristeas_Helmet.png",
+    "StatlessV2LimboAltHelmetBlueprint" : "../assets/img/helmets/Limbo_Magrite_Helmet.png",
+
+    "StatlessV1LokiAltHelmetBlueprint" : "../assets/img/helmets/Loki_Essence_Helmet.png",
+    "StatlessV2LokiAltHelmetBlueprint" : "../assets/img/helmets/Loki_Swindle_Helmet.png",
+    "StatlessV3LokiAltHelmetBlueprint" : "../assets/img/helmets/Loki_Enigma_Helmet.png",
+
+    "StatlessV1MagAltHelmetBlueprint" : "../assets/img/helmets/Mag_Coil_Helmet.png",
+    "StatlessV2MagAltHelmetBlueprint" : "../assets/img/helmets/Mag_Guass_Helmet.png",
+
+    "StatlessV1MesaAltHelmetBlueprint" : "../assets/img/helmets/Mesa_Longhorn_Helmet.png",
+    "StatlessV2MesaAltHelmetBlueprint" : "../assets/img/helmets/Mesa_Ovis_Helmet.png",
+
+    "StatlessV1MirageAltHelmetBlueprint" : "../assets/img/helmets/Mirage_Harlequin_Helmet.png",
+
+    "StatlessV1NekrosAltHelmetBlueprint" : "../assets/img/helmets/Nekros_Raknis_Helmet.png",
+    "StatlessV2NekrosAltHelmetBlueprint" : "../assets/img/helmets/Nekros_Shroud_Helmet.png",
+
+    "StatlessV1NezhaAltHelmetBlueprint" : "../assets/img/helmets/Nezha_Circa_Helmet.png",
+
+    "StatlessV1NovaAltHelmetBlueprint" : "../assets/img/helmets/Nova_Flux_Helmet.png",
+    "StatlessV2NovaAltHelmetBlueprint" : "../assets/img/helmets/Nova_Quantum_Helmet.png",
+    "StatlessV3NovaAltHelmetBlueprint" : "../assets/img/helmets/Nova_Slipstream_Helmet.png",
+
+    "StatlessV1NyxAltHelmetBlueprint" : "../assets/img/helmets/Nyx_Menticide_Helmet.png",
+    "StatlessV2NyxAltHelmetBlueprint" : "../assets/img/helmets/Nyx_Vespa_Helmet.png",
+
+    "StatlessV1OberonAltHelmetBlueprint" : "../assets/img/helmets/Oberon_Oryx_Helmet.png",
+    "StatlessV2OberonAltHelmetBlueprint" : "../assets/img/helmets/Oberon_Markhor_Helmet.png",
+
+    "StatlessV1RhinoAltHelmetBlueprint" : "../assets/img/helmets/Rhino_Thrak_Helm.png",
+    "StatlessV2RhinoAltHelmetBlueprint" : "../assets/img/helmets/Rhino_Vanguard_Helmet.png",
+
+    "StatlessV1SarynAltHelmetBlueprint" : "../assets/img/helmets/Saryn_Hemlock_Helmet.png",
+    "StatlessV2SarynAltHelmetBlueprint" : "../assets/img/helmets/Saryn_Chlora_Helmet.png",
+
+    "StatlessV1TitaniaAltHelmetBlueprint" : "../assets/img/helmets/Titania_Aurai_Helmet.png",
+
+    "StatlessV1TrinityAltHelmetBlueprint" : "../assets/img/helmets/Trinity_Aura_Helmet.png",
+    "StatlessV2TrinityAltHelmetBlueprint" : "../assets/img/helmets/Trinity_Meridian_Helmet.png",
+
+    "StatlessV1ValkyrAltHelmetBlueprint" : "../assets/img/helmets/Valkyr_Bastet_Helment.png",
+    "StatlessV2ValkyrAltHelmetBlueprint" : "../assets/img/helmets/Valkyr_Kara_Helmet.png",
+
+    "StatlessV1VaubanAltHelmetBlueprint" : "../assets/img/helmets/Vauban_Esprit_Helmet.png",
+    "StatlessV2VaubanAltHelmetBlueprint" : "../assets/img/helmets/Vauban_Gambit_Helmet.png",
+    "StatlessV3VaubanAltHelmetBlueprint" : "../assets/img/helmets/Vauban_Armistice_Helmet.png",
+    
+    "StatlessV1VoltAltHelmetBlueprint" : "../assets/img/helmets/Volt_Storm_Helmet.png",
+    "StatlessV2VoltAltHelmetBlueprint" : "../assets/img/helmets/Volt_Pulse_Helmet.png",
+
+    "StatlessV1WukongAltHelmetBlueprint" : "../assets/img/helmets/Wukong_Dasheng_Helmet.png",
+
+    "StatlessV1ZephyrAltHelmetBlueprint" : "../assets/img/helmets/Zephyr_Cierzo_Helmet.png",
+    "StatlessV2ZephyrAltHelmetBlueprint" : "../assets/img/helmets/Zephyr_Tengu_Helmet.png"
   }
 }
