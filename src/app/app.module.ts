@@ -6,6 +6,9 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+//pipes
+import { CommaSeparatedNumberPipe } from '../pipes/comma-separate';
+
 //ionic services
 import { Storage } from '@ionic/storage';
 
@@ -19,7 +22,8 @@ import { WarframeMapping } from '../providers/mapping';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CommaSeparatedNumberPipe
   ],
   imports: [
     IonicModule.forRoot(MyApp)

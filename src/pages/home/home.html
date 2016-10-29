@@ -60,7 +60,8 @@
 						<ion-grid>
 							<ion-row>
 								<ion-col width-33>
-									<img class="card-img alert-img no-border" src="../assets/img/components/NitainExtract.png" />
+									<img *ngIf="alert.rewards.items.length > 0" class="card-img alert-img no-border" src="../assets/img/components/NitainExtract.png" />
+                  <img *ngIf="alert.rewards.items.length <= 0" class="card-img credits-img no-border" src="../assets/img/Credits.png" />
 								</ion-col>
 								<ion-col class="card-details" width-66>
 									<div class="card-line"><strong>{{alert.node}} ({{alert.planet}})</strong> <span class="mission-lvl">Level {{alert.minEnemyLevel}}-{{alert.maxEnemyLevel}}</span></div>
@@ -69,10 +70,10 @@
 									<ion-grid>
 										<ion-row>
 											<ion-col class="reward-list">
-												<span class="inline-item"><img src="../assets/img/Credits.png" class="img-inline"/></span>
-												<span class="inline-item">5,000</span>
-												<span class="inline-item"> + </span>
-												<span class="inline-item">NITAIN EXTRACT</span>
+												<span *ngIf="alert.rewards.credits != 0" class="inline-item"><img src="../assets/img/Credits.png" class="img-inline"/></span>
+												<span *ngIf="alert.rewards.credits != 0" class="inline-item">{{alert.rewards.credits | commaSeparatedNumber}}</span>
+												<span *ngIf="alert.rewards.credits != 0 && alert.rewards.items.length > 0" class="inline-item"> + </span>
+												<span *ngIf="alert.rewards.items.length > 0" class="inline-item">NITAIN EXTRACT</span>
 											</ion-col>
 										</ion-row>
 									</ion-grid>

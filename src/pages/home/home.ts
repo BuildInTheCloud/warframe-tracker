@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Warframe } from '../../providers/warframe';
 import { WarframeMapping } from '../../providers/mapping';
+
+
 
 @Component({
   selector: 'page-home',
@@ -54,10 +57,15 @@ export class HomePage {
         minEnemyLevel: missionInfo.minEnemyLevel,
         maxEnemyLevel: missionInfo.maxEnemyLevel,
         rewards: {
-          credits: missionInfo.missionReward && missionInfo.missionReward.credits ? missionInfo.missionReward.credits : 0,
+          credits: 0,
           items: []
         }
       };
+
+      //if - credits
+      if(missionInfo.missionReward && missionInfo.missionReward.credits){
+        alert_item.rewards.credits = missionInfo.missionReward.credits;
+      }
 
       //if - items
       if (missionInfo.missionReward.items && missionInfo.missionReward.items.length > 0) {
@@ -84,6 +92,7 @@ export class HomePage {
       //add alert to list
       this.feed_data.alerts.push(alert_item);
     });
+    console.log(this.feed_data.alerts);
   }
 
   mapInvasions(invasions) {
