@@ -500,6 +500,8 @@
     "StatlessZephyrAltHelmetBlueprint" : "../assets/img/helmets/Zephyr_Cierzo_Helmet.png",
     "ZephyrCierzoHelmetBlueprint" : "../assets/img/helmets/Zephyr_Cierzo_Helmet.png",
     "StatlessV2ZephyrAltHelmetBlueprint" : "../assets/img/helmets/Zephyr_Tengu_Helmet.png",
-    "ZephyrTenguHelmetBlueprint" : "../assets/img/helmets/Zephyr_Tengu_Helmet.png"
+    "ZephyrTenguHelmetBlueprint" : "../assets/img/helmets/Zephyr_Tengu_Helmet.png",
+
+    "DarkSwordBlueprint" : "../assets/img/melee_weapons/DarkSword.png"
   }
 }

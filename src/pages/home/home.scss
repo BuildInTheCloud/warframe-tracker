@@ -86,6 +86,11 @@ page-home {
                                 ion-row{
                                     padding: 0px !important;
 
+                                    .blueprint-bg{
+                                        background-image: url("../assets/img/blueprint.png") !important;
+                                        max-height: 75px;
+                                    }
+
                                     ion-col{
                                         padding: 0px !important;
                                         display: flex;
@@ -198,10 +203,6 @@ page-home {
                                                     max-width: 26px !important;
                                                 }
                                             }
-                                        }
-
-                                        .blueprint-bg{
-                                            background-image: url("../assets/img/blueprint.png") !important;
                                         }
                                     }
                                 }

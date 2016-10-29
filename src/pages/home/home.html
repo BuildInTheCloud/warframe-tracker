@@ -59,7 +59,7 @@
 					<div class="section-item">
 						<ion-grid>
 							<ion-row>
-								<ion-col width-33>
+								<ion-col width-33 [ngClass]="{'blueprint-bg': alert.rewards.items[0].blueprint}">
 									<img *ngIf="alert.rewards.items.length > 0" class="card-img alert-img no-border" src="{{alert.rewards.items[0].img}}" />
                   <img *ngIf="alert.rewards.items.length <= 0" class="card-img credits-img no-border" src="../assets/img/Credits.png" />
 								</ion-col>
@@ -69,14 +69,14 @@
 									<div class="card-line"><strong>Reward:</strong></div>
 									<ion-grid>
 										<ion-row>
-											<ion-col class="reward-list" [ngClass]="{'blueprint-bg': alert.rewards.items[0].blueprint}">
+											<ion-col class="reward-list">
 												<span *ngIf="alert.rewards.credits != 0" class="inline-item"><img src="../assets/img/Credits.png" class="img-inline"/></span>
 												<span *ngIf="alert.rewards.credits != 0" class="inline-item">{{alert.rewards.credits | commaSeparatedNumber}}</span>
 												<span *ngIf="alert.rewards.credits != 0 && alert.rewards.items.length > 0" class="inline-item"> + </span>
                         <span *ngIf="alert.rewards.items.length > 0 && alert.rewards.items[0].endo" class="inline-item">
                           <img src="../assets/img/Endo.png" class="img-inline"/>
                         </span>
-												<span *ngIf="alert.rewards.items.length > 0" class="inline-item">{{alert.rewards.items[0].item}}</span>
+												<span *ngIf="alert.rewards.items.length > 0" class="inline-item">{{alert.rewards.items[0].item | uppercase}}</span>
 											</ion-col>
 										</ion-row>
 									</ion-grid>
