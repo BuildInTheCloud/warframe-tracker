@@ -71,9 +71,20 @@ export class HomePage {
       if (missionInfo.missionReward.items && missionInfo.missionReward.items.length > 0) {
         missionInfo.missionReward.items.forEach((reward_item) => {
           //add the item to our reward item array
-          let item_type = reward_item.ItemType || reward_item;
+          let item_type = reward_item.ItemType || reward_item.substring(reward_item.lastIndexOf('/') + 1);
+          let item_img = this.warframe_mapping.reward_images[item_type] || '';
+
           alert_item.rewards.items.push({
-            item: item_type.substring((item_type.lastIndexOf('/') + 1))
+            item: item_img ? item_img.substring(item_img.lastIndexOf('/') + 1)
+              .replace('_', '').replace('_', '')
+              .replace('.png', '')
+              .replace(/([A-Z])/g, ' $1') //insert space between camel-cased letters
+              .replace(/^./, str => str.toUpperCase() ) /*make spaced words uppercase*/
+              : item_type.substring((item_type.lastIndexOf('/') + 1)).replace('_', ''),
+              
+            img: item_img,
+            endo: reward_item.substring(reward_item.lastIndexOf('/') + 1).indexOf('AlertFusionBundle') > -1,
+            blueprint:reward_item.substring(reward_item.lastIndexOf('/') + 1).indexOf('Blueprint') > -1 
           });
         })
       }
@@ -82,9 +93,21 @@ export class HomePage {
       if (missionInfo.missionReward.countedItems && missionInfo.missionReward.countedItems.length > 0) {
         missionInfo.missionReward.countedItems.forEach((counted_item) => {
           //add the counted item to our reward items array
+          let counted_item_name = counted_item.ItemType.substring((counted_item.ItemType.lastIndexOf('/') + 1));
+          let item_img = this.warframe_mapping.reward_images[counted_item_name] || '';
+
           alert_item.rewards.items.push({
-            item: counted_item.ItemType.substring((counted_item.ItemType.lastIndexOf('/') + 1)),
-            count: counted_item.ItemCount
+            item: item_img ? item_img.substring(item_img.lastIndexOf('/') + 1)
+              .replace('_', '').replace('_', '')
+              .replace('.png', '')
+              .replace(/([A-Z])/g, ' $1') //insert space between camel-cased letters
+              .replace(/^./, str => str.toUpperCase() ) /*make spaced words uppercase*/ 
+              : counted_item_name,
+
+            count: counted_item.ItemCount || 0,
+            img: item_img,
+            endo: counted_item_name.indexOf('AlertFusionBundle') > -1,
+            blueprint:counted_item_name.substring(counted_item_name.lastIndexOf('/') + 1).indexOf('Blueprint') > -1 
           });
         })
       }

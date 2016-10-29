@@ -102,11 +102,11 @@ page-home {
                                         }
 
                                         .alert-img{
-                                            max-width:115px;
+                                            max-width:70px;
                                         }
 
                                         .credits-img{
-                                            max-width: 70px;
+                                            max-width: 50px;
                                         }
 
                                         .relic{
@@ -198,6 +198,10 @@ page-home {
                                                     max-width: 26px !important;
                                                 }
                                             }
+                                        }
+
+                                        .blueprint-bg{
+                                            background-image: url("../assets/img/blueprint.png") !important;
                                         }
                                     }
                                 }

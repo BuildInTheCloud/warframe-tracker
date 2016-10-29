@@ -321,7 +321,8 @@
     "SettlementNode20": "Phobos|Iliad|Assassination|Grineer|20 - 22|20 - 50|0.30000001|2",
     "EventNode14": "Phobos|PortalEventName|Sabotage|Grineer|20 - 22|20 - 50|0.30000001|2",
     "SettlementNode18": "Phobos|Opik|Interception|Grineer|20 - 22|20 - 50|0.30000001|2",
-    "ClanNode11": "Phobos|Zeugma|MT_EXCAVATE|Grineer|22 - 32|20 - 50|0.30000001|3"
+    "ClanNode11": "Phobos|Zeugma|MT_EXCAVATE|Grineer|22 - 32|20 - 50|0.30000001|3",
+    "SolNode408" : "Void|Belenus|Defense|Orokin|33 - 38|20 - 50|0.30000001|3"
   },
   "mission_index": {
     "0" : "MT_RESCUE",
@@ -333,7 +334,8 @@
   "factions":{
     "FC_INFESTATION" : "Infested",
     "FC_CORPUS" : "Corpus",
-    "FC_GRINEER" : "Grineer"
+    "FC_GRINEER" : "Grineer",
+    "FC_OROKIN" : "Orokin"
   },
   "missions" : {
     "MT_INTEL" : "Spy",
@@ -372,8 +374,10 @@
     "SteelMeridianSyndicate" : "../assets/img/steel-meridian.png"
   },
   "reward_images":{
-    
+    "AlertFusionBundleLarge" : "../assets/img/150.png",
+    "AlertFusionBundleMedium" : "../assets/img/100.png",
 
+    "Alertium" : "../assets/img/components/NitainExtract.png",
     "AlloyPlate" : "../assets/img/components/AlloyPlate.png",
     "ArgonCrystal" : "../assets/img/components/ArgonCrystal.png",
     "Circuits" : "../assets/img/components/Circuits.png",
@@ -393,7 +397,7 @@
     "MutagenSample" : "../assets/img/components/MutagenSample.png",
     "NanoSpores" : "../assets/img/components/NanoSpores.png",
     "NeuralSensor" : "../assets/img/components/NeuralSensor.png",
-    "Neurodes" : "../assets/img/components/Neurodes.png",
+    "Neurode" : "../assets/img/components/Neurode.png",
     "NitainExtract" : "../assets/img/components/NitainExtract.png",
     "OmegaIsotope" : "../assets/img/components/OmegaIsotope.png",
     "OrokinCatalyst" : "../assets/img/components/OrokinCatalyst.png",
@@ -407,6 +411,7 @@
     "Rubedo" : "../assets/img/components/Rubedo.png",
     "Salvage" : "../assets/img/components/Salvage.png",
     "Tellurium" : "../assets/img/components/Tellurium.png",
+    "VoidTearDrop" : "../assets/img/components/VoidTraces.png",
 
     "StatlessAshAltHelmetBlueprint" : "../assets/img/helmets/Ash_Scorpion_Helmet.png",
     "StatlessV2AshAltHelmetBlueprint" : "../assets/img/helmets/Ash_Locust_Helmet.png",
@@ -493,6 +498,8 @@
     "StatlessWukongAltHelmetBlueprint" : "../assets/img/helmets/Wukong_Dasheng_Helmet.png",
 
     "StatlessZephyrAltHelmetBlueprint" : "../assets/img/helmets/Zephyr_Cierzo_Helmet.png",
-    "StatlessV2ZephyrAltHelmetBlueprint" : "../assets/img/helmets/Zephyr_Tengu_Helmet.png"
+    "ZephyrCierzoHelmetBlueprint" : "../assets/img/helmets/Zephyr_Cierzo_Helmet.png",
+    "StatlessV2ZephyrAltHelmetBlueprint" : "../assets/img/helmets/Zephyr_Tengu_Helmet.png",
+    "ZephyrTenguHelmetBlueprint" : "../assets/img/helmets/Zephyr_Tengu_Helmet.png"
   }
 }
